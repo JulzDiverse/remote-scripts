@@ -1,5 +1,5 @@
 # hello-world
 
-This scripts prints hello-world to you command-line. 
+This **script** prints _hello-world_ to you command-line. 
 
 ## Try it with the remote-script executor
