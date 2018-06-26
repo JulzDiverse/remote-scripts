@@ -16,7 +16,7 @@ clone_repos() {
 	  git clone https://github.com/cloudfoundry/bosh-deployment.git
 	  git clone https://github.com/cloudfoundry/cf-deployment.git
 	  git clone -b develop --single-branch https://github.com/JulzDiverse/capi-release.git
-		git clone -b develop --single-branch https://github.com/cloudfoundry-incubator/eirini-release.git
+		git clone -b wip-deploy-script --single-branch https://github.com/cloudfoundry-incubator/eirini-release.git
 	popd
 }
 
