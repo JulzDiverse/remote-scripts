@@ -1,14 +1,14 @@
 #!/bin/bash
 
 main() {
-  export EIRINI_LITE=${EIRINI_LITE:-"$HOME/eirini-lite"}
+  export EIRINI_LITE=${EIRINI_LITE:-"$HOME/workspace/eirini-lite"}
 
-	mkdir "$EIRINI_LITE"
+	mkdir -p "$EIRINI_LITE"
 	clone_repos
 
 	set_env
 
-	$EIRINI_RELEASE/scripts/lite/deploy-lite-director.sh
+	$EIRINI_RELEASE/scripts/lite/setup-eirini-environment.sh
 }
 
 clone_repos() {
@@ -16,7 +16,7 @@ clone_repos() {
 	  git clone https://github.com/cloudfoundry/bosh-deployment.git
 	  git clone https://github.com/cloudfoundry/cf-deployment.git
 	  git clone -b develop --single-branch https://github.com/JulzDiverse/capi-release.git
-		git clone -b wip-deploy-script --single-branch https://github.com/cloudfoundry-incubator/eirini-release.git
+		git clone -b develop --single-branch https://github.com/cloudfoundry-incubator/eirini-release.git
 	popd
 }
 
