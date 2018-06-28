@@ -1,3 +1,9 @@
 #!/bin/bash
 
-echo "Hello, World!"
+if [ -z "$1" ]; then
+	greet="World"
+else
+	greet="$1"
+fi
+
+echo "Hello, $greet!"
