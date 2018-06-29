@@ -78,6 +78,7 @@ install_minikube(){
 
 install_ruby(){
   apt install ruby
+  gem install bundle
 }
 
 main
