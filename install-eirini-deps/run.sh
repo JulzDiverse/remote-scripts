@@ -25,6 +25,9 @@ main(){
    printf "\\n:::::Installing ruby\\n"
    install_ruby
 
+   printf "\\n:::::Installing go\\n"
+   install_go
+
 	 echo "Installation of eirini dependencies done! You can start to setup the Eirini environment now!"
 }
 
@@ -79,6 +82,11 @@ install_minikube(){
 install_ruby(){
   apt install ruby
   gem install bundle
+}
+
+install_go(){
+  wget https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz && tar -C /usr/local -xzf go1.10.3.linux-amd64.tar.gz
+  echo "export PATH=\$PATH:/usr/local/go/bin"	>> "$HOME"/.profile
 }
 
 main
