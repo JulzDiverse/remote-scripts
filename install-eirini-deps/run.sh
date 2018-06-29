@@ -1,29 +1,31 @@
 #!/bin/bash
 
 main(){
-   printf "\\n:::::Installing OS dependencies"
+   printf "\\n:::::Installing OS dependencies\\n"
    install_os_deps
 
-   printf "\\n:::::Installing vbox"
+   printf "\\n:::::Installing vbox\\n"
    install_vbox
 
-   printf "\\n:::::Installing docker"
+   printf "\\n:::::Installing docker\\n"
    install_docker
 
-   printf "\\n:::::Installing bosh"
+   printf "\\n:::::Installing bosh\\n"
    install_bosh
 
-   printf "\\n:::::Installing cf cli"
+   printf "\\n:::::Installing cf cli\\n"
    install_cf_cli
 
-   printf "\\n:::::Installing kubectl"
+   printf "\\n:::::Installing kubectl\\n"
    install_kubectl
 
-   printf "\\n:::::Installing minikube"
+   printf "\\n:::::Installing minikube\\n"
    install_minikube
 
-   printf "\\n:::::Installing ruby"
+   printf "\\n:::::Installing ruby\\n"
    install_ruby
+
+	 echo "Installation of eirini dependencies done! You can start to setup the Eirini environment now!"
 }
 
 install_os_deps(){
