@@ -6,4 +6,6 @@ If an parameter is passed to the script, it will print the parameter value inste
 
 ## Pass parameter using resc
 
-**$ resc run hello-world -r JulzDiverse/remote-scripts -a <your-name>**
+$ resc run hello-world -r JulzDiverse/remote-scripts -a "<your-name>"
+
+
