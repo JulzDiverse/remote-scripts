@@ -46,7 +46,6 @@ install_docker(){
    apt-get update
    apt-cache policy docker-ce
    apt-get install -y docker-ce
-   systemctl status docker
 }
 
 install_bosh(){
