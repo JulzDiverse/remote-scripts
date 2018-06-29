@@ -1,5 +1,9 @@
 # hello-world
 
-This **script** prints _hello-world_ to you command-line. 
+This **script** prints _Hello, World!_ to the command line.
 
-## Try it with the remote-script executor
+If an parameter is passed to the script, it will print the parameter value instead of "World". Try it ;)
+
+## Pass parameter using resc
+
+**$ resc run hello-world -r JulzDiverse/remote-scripts -a <your-name>**
