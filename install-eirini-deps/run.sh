@@ -28,6 +28,9 @@ main(){
    printf "\\n:::::Installing go\\n"
    install_go
 
+   printf "\\n:::::Setting Environment Variable\\n"
+   set_env_vars
+
 	 echo "Installation of eirini dependencies done! You can start to setup the Eirini environment now!"
 }
 
@@ -87,6 +90,14 @@ install_ruby(){
 install_go(){
   wget https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz && tar -C /usr/local -xzf go1.10.3.linux-amd64.tar.gz
   echo "export PATH=\$PATH:/usr/local/go/bin"	>> "$HOME"/.profile
+}
+
+set_env_vars() {
+cat >	~/.bash_profile << EOF
+export EIRINI_LITE=$HOME/workspace/eirini-lite
+export PATH=$PATH:/usr/local/go/bin
+EOF
+mkdir -p "$EIRINI_LITE"
 }
 
 main
