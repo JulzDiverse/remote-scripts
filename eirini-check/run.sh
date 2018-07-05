@@ -31,42 +31,51 @@ main(){
 
 check_minikube(){
   which minikube
-	message_on_error $? "minikube is not installed or not in path!"
-
-	minikube ip
-	message_on_success $? "minikube is already running. It should be fine but you should delete the existing one or shut it down"
+	local error_code
+	message_on_error $error_code "minikube is not installed or not in path!"
+	message_on_success $error_code ":::: OK"
 }
 
 check_kubectl(){
   which kubectl
-	message_on_error $? "kubectl not installed or not in path"
+	local error_code=$?
+	message_on_error $error_code "kubectl not installed or not in path"
+	message_on_success $error_code ":::: OK"
 }
 
 check_ruby(){
   ruby --version
-	error_code=$?
+	local error_code=$?
 	message_on_error $error_code "ruby not installed or not in path"
-	message_on_success $error_code "you should have installed ruby version 2.4"
+	message_on_success $error_code ":::: OK -> just make sure you have ruby 2.4 installed"
 }
 
 check_go(){
   go version
-	message_on_error $? "go not installed or not in path"
+	local error_code=$?
+	message_on_error $error_code "go not installed or not in path"
+	message_on_success $error_code ":::: OK"
 }
 
 check_bosh(){
   which bosh
-	message_on_error $? "bosh not installed or not in path. If you use bosh as bosh2 you should alias it to bosh"
+	local error_code=$?
+	message_on_error $error_code "bosh not installed or not in path. If you use bosh as bosh2 you should alias it to bosh"
+	message_on_success $error_code ":::: OK"
 }
 
 check_cf(){
   which cf
-	message_on_error $? "cf not installed or not in path."
+	local error_code=$?
+	message_on_error $error_code "cf not installed or not in path."
+	message_on_success $error_code ":::: OK"
 }
 
 check_vbox(){
   which vboxmanage
-	message_on_error $? "virtual box not installed or not in path"
+	local error_code=$?
+	message_on_error $error_code "virtual box not installed or not in path"
+	message_on_success $error_code ":::: OK"
 }
 
 
