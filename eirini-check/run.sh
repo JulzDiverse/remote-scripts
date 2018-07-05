@@ -1,18 +1,37 @@
 #!/bin/bash
 
 main(){
+	echo "*****CHECKING MINIKUBE*****"
   check_minikube
+	echo
+
+	echo "*****CHECKING KUBECTL*****"
 	check_kubectl
+	echo
+
+	echo "*****CHECKING RUBY*****"
 	check_ruby
+	echo
+
+	echo "*****CHECKING GO*****"
 	check_go
+	echo
+
+	echo "*****CHECKING BOSH*****"
 	check_bosh
+	echo
+
+	echo "*****CHECKING CF*****"
 	check_cf
+  echo
+
+	echo "*****CHECKING VBOX*****"
 	check_vbox
 }
 
 check_minikube(){
   which minikube
-	verify_exit_code $? "minikube is not installed or not in path!"
+	message_on_error $? "minikube is not installed or not in path!"
 
 	minikube ip
 	message_on_success $? "minikube is already running. It should be fine but you should delete the existing one or shut it down"
@@ -31,7 +50,7 @@ check_ruby(){
 }
 
 check_go(){
-  go --version
+  go version
 	message_on_error $? "go not installed or not in path"
 }
 
