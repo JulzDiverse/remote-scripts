@@ -46,7 +46,7 @@ check_kubectl(){
 check_ruby(){
 	ruby --version | grep 2.4
 	local error_code=$?
-	message_on_error $error_code "ruby not installed or not in path"
+	message_on_error $error_code "ruby not installed, not in path or you are using the wrong version"
 	message_on_success $error_code ":::: OK -> just make sure you have ruby 2.4 installed"
 }
 
